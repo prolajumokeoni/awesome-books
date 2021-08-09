@@ -1,5 +1,5 @@
 // Add a book collection
-const books = [
+let books = [
   {
     id: 1,
     title: 'The River Between',
@@ -19,21 +19,33 @@ const addBook = (book) => {
 };
 
 const book = {
-  id:3,
+  id: 3,
   title: 'Things fall apart',
   author: 'Chinua Achebe',
 };
 
-addBook(book)
+addBook(book);
 
 
-// REmove a book
-
+// // REmove a book
 const removeBook = (id) => {
-  return books.filter((book) => {
-    book.id !== id;
+  books = books.filter((book) => {
+    return book.id !== id;
   });
 };
 
+// displaying books
+books.forEach((book) => {
+  const parentDiv = document.querySelector('.books');
+  const div = document.createElement('div');
+  div.classList.add('book');
+  div.innerHTML = `
+    <h5>${book.title}</h5>  
+    <p>${book.author}</p>  
+    <button>remove</button>
+    <hr>
+  `;
 
-console.log(books);
+  parentDiv.appendChild(div);
+});
+
