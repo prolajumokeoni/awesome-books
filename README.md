@@ -32,9 +32,9 @@ To get a local copy up and running follow these simple example steps:
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@kalunge](https://github.com/kalunge)
+- Twitter: [@kalunge](https://twitter.com/titus_muthomi)
+- LinkedIn: [kalunge](https://linkedin.com/in/titus_muthomi)
 
 
 
