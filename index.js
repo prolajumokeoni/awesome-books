@@ -1,4 +1,8 @@
-const books = [];
+const books = [
+  {
+
+  }
+];
 let retrievedBooks;
 if (localStorage.getItem('books') === null) {
   localStorage.setItem('books', JSON.stringify(books));
@@ -6,6 +10,7 @@ if (localStorage.getItem('books') === null) {
   retrievedBooks = JSON.parse(localStorage.getItem('books'));
 }
 const displayBooks = () => {
+  let retrievedBooks = JSON.parse(localStorage.getItem('books'));
   retrievedBooks.forEach((book) => {
     const parentDiv = document.querySelector('.books');
     const div = document.createElement('div');
@@ -21,6 +26,7 @@ const displayBooks = () => {
 };
 const addButton = document.querySelector('#add-button');
 const addBook = (e) => {
+  let retrievedBooks = JSON.parse(localStorage.getItem('books'));
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
