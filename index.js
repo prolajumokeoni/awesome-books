@@ -1,3 +1,63 @@
+class Book {
+  constructor(title,author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
+class Storage {
+  static addBook(book) {
+    books = Storage.getBooks()
+    localStorage.setItem('books', JSON.stringify(books))
+  }
+  static getBooks() {
+    let books 
+    if (localStorage.getItem('books'))  {
+      books = JSON.parse(localStorage.getItem('books'))
+    } else {
+      books = []
+    }
+    return books
+  }
+
+  static removeBook() {
+
+  }
+}
+
+class Display {
+  static displayBooks() {
+    retrievedBooks = Storage.getBooks()
+    retrievedBooks.forEach((book) => {
+    const parentDiv = document.querySelector('.books');
+    const div = document.createElement('div');
+    div.classList.add('book');
+    div.innerHTML = `
+    <h5>${book.title}</h5>  
+    <p>${book.author}</p>  
+    <button class="remove">remove</button>
+    <hr>
+  `;
+    parentDiv.appendChild(div);
+    })
+  }
+  static addBookToDisplay(book) {
+    const parentDiv = document.querySelector('.books');
+    const div = document.createElement('div');
+    div.classList.add('book');
+    div.dataset.id = book.id;
+    div.innerHTML = `
+      <h5>${book.title}</h5>  
+      <p>${book.author}</p>  
+      <button class="remove">remove</button>
+      <hr>
+    `;
+  parentDiv.appendChild(div);
+  }
+}
+
+
+
 const books = [];
 let retrievedBooks;
 if (localStorage.getItem('books') === null) {
