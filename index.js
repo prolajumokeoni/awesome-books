@@ -81,9 +81,7 @@ addButton.addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
   const books = Storage.getBooks();
 
-  const bookExists = books.find((book) => {
-    return book.title === title;
-  });
+  const bookExists = books.find((book) =>  book.title === title);
 
   if (bookExists) {
     Display.showAlert('That book already exists', 'danger');
