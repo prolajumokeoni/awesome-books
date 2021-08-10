@@ -1,3 +1,4 @@
+/* eslint-disable  max-classes-per-file */
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -7,10 +8,11 @@ class Book {
 
 class Storage {
   static addBook(book) {
-    let books = Storage.getBooks();
+    const books = Storage.getBooks();
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
+
   static getBooks() {
     let books;
     if (localStorage.getItem('books')) {
@@ -20,6 +22,7 @@ class Storage {
     }
     return books;
   }
+
   static removeBook(author) {
     const newBooks = Storage.getBooks();
     newBooks.forEach((book, index) => {
@@ -33,11 +36,12 @@ class Storage {
 
 class Display {
   static displayBooks() {
-    let retrievedBooks = Storage.getBooks();
+    const retrievedBooks = Storage.getBooks();
     retrievedBooks.forEach((book) => {
       Display.addBookToDisplay(book);
     });
   }
+
   static addBookToDisplay(book) {
     const parentDiv = document.querySelector('.books');
     const div = document.createElement('div');
@@ -50,6 +54,7 @@ class Display {
     `;
     parentDiv.appendChild(div);
   }
+
   static removeBookFromDisplay(elem) {
     if (elem.classList.contains('remove')) {
       elem.parentElement.remove();
