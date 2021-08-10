@@ -4,10 +4,6 @@ class Book {
     this.title = title;
     this.author = author;
   }
-
-  static assignId() {
-    this.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-  }
 }
 
 class Storage {
@@ -53,7 +49,7 @@ class Display {
     div.innerHTML = `
       <h5>${book.title}</h5>  
       <p>${book.author}</p>  
-      <button id=${book.title} class="remove">remove</button>
+      <button class="remove">remove</button>
       <hr>
     `;
     parentDiv.appendChild(div);
@@ -64,6 +60,17 @@ class Display {
       elem.parentElement.remove();
     }
   }
+  
+  static showAlert(message, className) {
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector('.container');
+    const form = document.querySelector('.book-form');
+    container.insertBefore(div, form);
+
+    setTimeout(() => document.querySelector('.alert').remove(), 2000);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', Display.displayBooks);
@@ -72,22 +79,25 @@ addButton.addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const hidden = document.querySelector('#hidden');
   const books = Storage.getBooks();
 
-  books.forEach((book) => {
-    if (book.title === title) {
-      return alert('That book already exists');
-    } else {
-      const book = new Book(title, author);
-      Display.addBookToDisplay(book);
-      document.querySelector('#title').value = '';
-      document.querySelector('#author').value = '';
-      Storage.addBook(book);
-    }
+  bookExists = books.find((book) => {
+    return book.title === title;
   });
+
+  if (bookExists) {
+    Display.showAlert('That book already exists', 'danger');
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+  } else {
+    const book = new Book(title, author);
+    Display.addBookToDisplay(book);
+    Storage.addBook(book);
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+  }
 });
 document.querySelector('.books').addEventListener('click', (e) => {
   Display.removeBookFromDisplay(e.target);
-  Storage.removeBook(e.target.previousElementSibling);
+  Storage.removeBook(e.target.previousElementSibling.textContent);
 });
