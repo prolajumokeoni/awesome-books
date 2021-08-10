@@ -4,6 +4,10 @@ class Book {
     this.title = title;
     this.author = author;
   }
+
+  static assignId() {
+    this.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+  }
 }
 
 class Storage {
@@ -49,7 +53,7 @@ class Display {
     div.innerHTML = `
       <h5>${book.title}</h5>  
       <p>${book.author}</p>  
-      <button class="remove">remove</button>
+      <button id=${book.title} class="remove">remove</button>
       <hr>
     `;
     parentDiv.appendChild(div);
@@ -68,13 +72,22 @@ addButton.addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const book = new Book(title, author);
-  Display.addBookToDisplay(book);
-  document.querySelector('#title').value = '';
-  document.querySelector('#author').value = '';
-  Storage.addBook(book);
+  const hidden = document.querySelector('#hidden');
+  const books = Storage.getBooks();
+
+  books.forEach((book) => {
+    if (book.title === title) {
+      return alert('That book already exists');
+    } else {
+      const book = new Book(title, author);
+      Display.addBookToDisplay(book);
+      document.querySelector('#title').value = '';
+      document.querySelector('#author').value = '';
+      Storage.addBook(book);
+    }
+  });
 });
 document.querySelector('.books').addEventListener('click', (e) => {
   Display.removeBookFromDisplay(e.target);
-  Storage.removeBook(e.target.previousElementSibling.textContent);
+  Storage.removeBook(e.target.previousElementSibling);
 });
