@@ -81,7 +81,7 @@ addButton.addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
   const books = Storage.getBooks();
 
-  bookExists = books.find((book) => {
+  const bookExists = books.find((book) => {
     return book.title === title;
   });
 
