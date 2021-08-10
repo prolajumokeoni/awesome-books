@@ -60,7 +60,7 @@ class Display {
       elem.parentElement.remove();
     }
   }
-  
+
   static showAlert(message, className) {
     const div = document.createElement('div');
     div.className = `alert alert-${className}`;
@@ -81,9 +81,7 @@ addButton.addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
   const books = Storage.getBooks();
 
-  bookExists = books.find((book) => {
-    return book.title === title;
-  });
+  const bookExists = books.find((book) => book.title === title);
 
   if (bookExists) {
     Display.showAlert('That book already exists', 'danger');
