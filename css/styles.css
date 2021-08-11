@@ -6,12 +6,13 @@
 .sec-width {
   margin: 0 auto;
 }
+
 h1 {
   text-align: center;
   font-family: sans-serif;
   margin-top: 5%;
-
 }
+
 .book {
   width: 85%;
   padding: 2% 0;
@@ -20,7 +21,6 @@ h1 {
   margin: 0 auto;
   align-items: center;
 }
-
 
 .books {
   border: 3px solid black;
@@ -65,13 +65,16 @@ h1 {
   .sec-width {
     width: 70%;
   }
+
   .book {
     width: 90%;
   }
+
   .books {
     width: 70%;
   }
+
   #add-button {
-  margin-left: 55%;
+    margin-left: 55%;
   }
 }
