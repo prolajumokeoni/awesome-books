@@ -47,9 +47,15 @@ class Display {
     const div = document.createElement('div');
     div.classList.add('book');
     div.innerHTML = `
-      <h5>${book.title}</h5>  
-      <p>${book.author}</p>  
-      <button class="remove">remove</button>
+      <div class="collection">
+      <h5 class="book-item">${book.title} by ${book.author}</h5>  
+    
+      </div>
+      <div class="empty"></div>
+      
+      <div class="reremove">
+        <button class="remove">remove</button>
+      </div
       <hr>
     `;
     parentDiv.appendChild(div);
