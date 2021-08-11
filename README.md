@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple example steps:
 
 ## Authors
 
-👤 **Author1**
+👤 **kalunge**
 
 - GitHub: [@kalunge](https://github.com/kalunge)
 - Twitter: [@kalunge](https://twitter.com/titus_muthomi)
