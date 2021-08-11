@@ -65,9 +65,12 @@ h1 {
   .sec-width {
     width: 70%;
   }
-
- 
-
+  .book {
+    width: 90%;
+  }
+  .books {
+    width: 70%;
+  }
   #add-button {
   margin-left: 55%;
   }
