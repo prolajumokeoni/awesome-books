@@ -47,17 +47,14 @@ class Display {
     const div = document.createElement('div');
     div.classList.add('book');
     div.innerHTML = `
-      <div class="collection">
-      <h5 class="book-item">${book.title} by ${book.author}</h5>  
-    
-      </div>
-      <div class="empty"></div>
+        <div class="collection">
+        <p class="book-item"><small>"${book.title}"</small> by <strong>${book.author}</strong></p>  
       
-      <div class="reremove">
-        <button class="remove">remove</button>
-      </div
-      <hr>
-    `;
+        </div>
+        <div class="empty"></div>        
+          <button class="remove">remove</button>
+        <hr>
+      `;
     parentDiv.appendChild(div);
   }
 
@@ -97,11 +94,13 @@ addButton.addEventListener('click', (e) => {
     const book = new Book(title, author);
     Display.addBookToDisplay(book);
     Storage.addBook(book);
+    console.log(book.author);
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
 });
 document.querySelector('.books').addEventListener('click', (e) => {
   Display.removeBookFromDisplay(e.target);
-  Storage.removeBook(e.target.previousElementSibling.textContent);
+  const myArr = e.target.previousElementSibling.previousElementSibling.textContent.trim().split(' ');
+  Storage.removeBook(myArr[myArr.length - 1]);
 });
