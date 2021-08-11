@@ -14,8 +14,7 @@ h1 {
 }
 
 .book {
-  width: 85%;
-  padding: 2% 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -28,6 +27,10 @@ h1 {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+}
+
+.book:nth-child(odd) {
+  background-color: grey;
 }
 
 .collection {
@@ -64,10 +67,6 @@ h1 {
 @media only screen and (min-width: 600px) {
   .sec-width {
     width: 70%;
-  }
-
-  .book {
-    width: 90%;
   }
 
   .books {
