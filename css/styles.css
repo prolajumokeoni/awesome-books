@@ -13,12 +13,17 @@ h1 {
   margin-top: 5%;
 }
 
+a,
+.nav-link {
+  color: black;
+}
+
 a:hover {
   opacity: 70%;
 }
 
 .active {
-  opacity: 50%;
+  color: blue;
 }
 
 .center {
