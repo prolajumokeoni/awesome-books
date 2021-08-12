@@ -30,7 +30,7 @@ h1 {
 }
 
 .book:nth-child(odd) {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 .collection {
@@ -56,6 +56,10 @@ h1 {
   align-items: center;
   width: 100%;
   margin: 10% auto;
+}
+
+.date {
+  text-align: end;
 }
 
 #add-button {
