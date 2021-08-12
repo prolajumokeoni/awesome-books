@@ -21,6 +21,10 @@ a:hover {
   opacity: 50%;
 }
 
+.center {
+  margin-left: 25%;
+}
+
 .book {
   width: 100%;
   display: flex;
@@ -79,7 +83,6 @@ a:hover {
 .list-group-item {
   border: none;
 }
-
 
 @media only screen and (min-width: 600px) {
   .sec-width {
