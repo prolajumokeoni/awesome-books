@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-  width: auto;
+body {
+  width: 97%;
+  margin: 0 auto;
 }
 
 .sec-width {
@@ -67,9 +67,11 @@ h1 {
   margin-left: 60%;
   margin-top: 10px;
 }
+
 li {
   list-style: none;
 }
+
 @media only screen and (min-width: 600px) {
   .sec-width {
     width: 70%;

@@ -103,9 +103,8 @@ addButton.addEventListener('click', (e) => {
 });
 document.querySelector('.books').addEventListener('click', (e) => {
   Display.removeBookFromDisplay(e.target);
-  const myArr =
-    e.target.previousElementSibling.previousElementSibling.textContent
-      .trim()
-      .split(' ');
+  const myArr = e.target.previousElementSibling.previousElementSibling.textContent
+    .trim()
+    .split(' ');
   Storage.removeBook(myArr[myArr.length - 1]);
 });
