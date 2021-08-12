@@ -10,22 +10,76 @@
 		<title>Awesome Books</title>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg  bg-white border-secondary border mt-2 ">
+			<div class="container-fluid">
+				<a class="navbar-brand home" href="#">Awesome Books</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+					aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item ">
+							<a class="nav-link list-button border-end" href="#">
+								List
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link add-new border-end" href="#">
+								Addnew
+							</a>
+						</li>
+						<li class="nav-item add-contacts">
+							<a class="nav-link" href="#">
+								Contacts
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="date"></div>
 		<section class="container sec-width">
-			<h1>All Awesome Books</h1>
-			<div class="books">
+			<div class="list mb-1">
+				<h1>All Awesome Books</h1>
+				<div class="books">
+				</div>
 			</div>
 			<form class="book-form">
-			<h4>Add a new book</h4>
+				<h4>Add a new book</h4>
 				<div>
-					<input class="form-control" type="text" id="title" placeholder="title" required>
+					<input required class="form-control" type="text" id="title" placeholder="title">
 				</div>
 				<br>
 				<div>
-					<input class="form-control" type="text" id="author" placeholder="author" required>
+					<input required class="form-control" type="text" id="author" placeholder="author">
 				</div>
 				<button type="submit" id="add-button">Add</button>
 			</form>
 		</section>
-		<script src="./index.js"></script>
+		<section class="contact mx-5 mt-5 mb-5">
+			<h2 class="mb-5 text-center">Contact Information</h2>
+			<div class="center">
+				<p>Do Have any questions or want to say hello!</p>
+				<p>You can reach out to us</p>
+				<ul class=" mt-2">
+					<li>email: Contact@info.com</li>
+					<li>Phone: 25471369562224</li>
+					<li>Adress: 2245 Abujs</li>
+				</ul>
+			</div>
+		</section>
+		<footer class="pt-2 fixed-bottom px-3 bg-light border-secondary border-top mt-5">
+			<div>
+				<p>&copy; Copyright 2021</p>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+		</script>
+		<script src="./js/luxon.js"></script>
+		<script src="./js/index.js"></script>
+		<script src="./js/nav.js"></script>
 	</body>
 </html>

@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-  width: auto;
+body {
+  width: 97%;
+  margin: 0 auto;
 }
 
 .sec-width {
@@ -11,6 +11,23 @@ h1 {
   text-align: center;
   font-family: sans-serif;
   margin-top: 5%;
+}
+
+a,
+.nav-link {
+  color: black;
+}
+
+a:hover {
+  opacity: 70%;
+}
+
+.active {
+  color: blue;
+}
+
+.center {
+  margin-left: 25%;
 }
 
 .book {
@@ -30,7 +47,7 @@ h1 {
 }
 
 .book:nth-child(odd) {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 .collection {
@@ -58,10 +75,18 @@ h1 {
   margin: 10% auto;
 }
 
+.date {
+  text-align: end;
+}
+
 #add-button {
   margin: 0 auto;
   margin-left: 60%;
   margin-top: 10px;
+}
+
+.list-group-item {
+  border: none;
 }
 
 @media only screen and (min-width: 600px) {
